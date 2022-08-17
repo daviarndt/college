@@ -1,10 +1,14 @@
 package br.com.college.model;
 
-
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
+@Table
 public class EstudanteModel {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String matricula;
     private String nome;
@@ -74,5 +78,17 @@ public class EstudanteModel {
 
     public Integer getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "EstudanteModel{" +
+                "id=" + id +
+                ", matricula='" + matricula + '\'' +
+                ", nome='" + nome + '\'' +
+                ", email='" + email + '\'' +
+                ", dataNascimento=" + dataNascimento +
+                ", idade=" + idade +
+                '}';
     }
 }
